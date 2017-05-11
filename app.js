@@ -4,12 +4,12 @@ console.log("Bienvenue!");
 function cafe() {
   //déclaration des différents cafés
   var court = 1;
-  var long = 2;
-  var lait = 3;
+  var long = 1.2;
+  var lait = 1.5;
   var cafes = ["court", "long", "lait"];
   //boucle de sélection d'un café s'il existe
   for (var i = 0; i < 10; i++) {
-    var choix = prompt("Court(1€) / long(2€) / au lait(3€) ?").toLowerCase();
+    var choix = prompt("Court(1€) / long(1.2€) / au lait(1.5€) ?").toLowerCase();
     if (cafes.indexOf(choix) < 0) {
       alert("Produit demandé non disponible / inexistant");
     }
@@ -18,9 +18,9 @@ function cafe() {
       if (choix == "court") {
         console.log("Café court demandé, veuillez insérer 1€");
       }else if (choix == "long"){
-        console.log("Café long demandé, veuillez insérer 2€");
+        console.log("Café long demandé, veuillez insérer 1.2€");
       }else if (choix == "lait"){
-        console.log("Café au lait demandé, veuillez insérer 3€");
+        console.log("Café au lait demandé, veuillez insérer 1.5€");
       }
       break;
     }
@@ -71,21 +71,21 @@ function cafe() {
     alert("Préparation café court");
     if (somme > court) {
       var rendu = somme - court;
-      alert("Voici votre monnaie :" + rendu +"€");
+      alert("Voici votre monnaie : " + rendu +"€");
     }
   }
   else if (choix == "long") {
     alert("Préparation café long");
     if (somme > long) {
       var rendu = somme - long;
-      alert("Voici votre monnaie :" + rendu +"€");
+      alert("Voici votre monnaie : " + rendu +"€");
     }
   }
   else if (choix == "lait") {
     alert("Préparation café au lait");
     if (somme > lait) {
       var rendu = somme - lait;
-      alert("Voici votre monnaie :" + rendu +"€");
+      alert("Voici votre monnaie : " + rendu +"€");
     }
   }
   alert("Voici votre café, passez une bonne journée!");
