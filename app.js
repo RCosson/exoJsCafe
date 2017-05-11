@@ -1,15 +1,20 @@
+//message d'accueil
 console.log("Bienvenue!");
+//initialisation de la fonction permettant la commande et la production d'un café
 function cafe() {
+  //déclaration des différents cafés
   var court = 1;
   var long = 2;
   var lait = 3;
   var cafes = ["court", "long", "lait"];
+  //boucle de sélection d'un café s'il existe
   for (var i = 0; i < 10; i++) {
-    var choix = prompt("Court(1€) / long(2€) / au lait(3€) ?");
+    var choix = prompt("Court(1€) / long(2€) / au lait(3€) ?").toLowerCase();
     if (cafes.indexOf(choix) < 0) {
       alert("Produit demandé non disponible / inexistant");
     }
     else {
+      //consignes de paiment
       if (choix == "court") {
         console.log("Café court demandé, veuillez insérer 1€");
       }else if (choix == "long"){
@@ -26,8 +31,9 @@ function cafe() {
   for (var i = 0; i < 20; i++) {
     var piece = prompt('Veuillez insérer vos pièces:');
     if (bonnesPieces.indexOf(piece) >= 0) {
-      var piece2 = parseInt(piece);
+      var piece2 = parseInt(piece).toFixed(2);
       stock.push(piece2);
+      console.log("*cling*");
     }else if(piece == "") {
       somme = stock.reduce((total, amount) => total + amount);
       if (choix == "court") {
@@ -58,7 +64,7 @@ function cafe() {
         }
       }
     }else{
-      alert("Pièce refusée.");
+      alert("Pièce refusée, seules acceptées: 0.1, 0.2, 0.5, 1 et 2(€).");
     }
   }
   if (choix == "court") {
@@ -82,6 +88,7 @@ function cafe() {
       alert("Voici votre monnaie :" + rendu +"€");
     }
   }
+  alert("Voici votre café, passez une bonne journée!");
 }
 
 var gobelets = 11;
